@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: radial-gradient(#0f2027, #203a43, #2c5364);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.stars {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.stars::before,
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+    20vw 10vh #fff, 40vw 20vh #ccc, 60vw 30vh #fff, 80vw 40vh #ddd,
+    25vw 50vh #eee, 45vw 60vh #bbb, 70vw 70vh #fff, 90vw 80vh #999,
+    10vw 90vh #ccc, 30vw 15vh #fff, 50vw 25vh #eee;
+  animation: twinkle 5s infinite ease-in-out;
+}
+
+.stars::after {
+  animation-delay: 2.5s;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+
+.container {
+  max-width: 400px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #a5d8ff;
+  margin-bottom: 1rem;
+  z-index: 1;
+  position: relative;
+}
+
+.heart {
+  font-size: 4rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  color: #ff6b81;
+  z-index: 1;
+  position: relative;
+}
+
+.heart:hover {
+  transform: scale(1.2);
+}
+
+.message {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  color: #d1ecf1;
+  font-weight: bold;
+  min-height: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+.note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #bbbbbb;
+  z-index: 1;
+  position: relative;
+}
