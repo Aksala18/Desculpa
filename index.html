@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Desculpa, amor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <h1 class="title">Clica no coração</h1>
+    <div class="heart" onclick="nextMessage()">
+      ❤️
+    </div>
+    <p id="message" class="message">Desculpa 🥺</p>
+    <p class="note">Vai clicando... cada clique é uma parte do que quero dizer</p>
+  </div>
+
+  <script>
+    const messages = [
+      "Desculpa 🥺",
+      "Não foi a minha intenção magoar te.",
+      "Eu sempre tento ao máximo fazer os possíveis para estar contigo.",
+      "Tu és super importante para mim.",
+      "Eu adoro passar tempo contigo.",
+      "Hoje está complicado para mim, mas vou tentar estar contigo o mais cedo possível",
+      "Txi amo ❤️"
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+      index = (index + 1) % messages.length;
+      document.getElementById("message").textContent = messages[index];
+    }
+  </script>
+</body>
+</html>
